@@ -1,7 +1,8 @@
-package com.binaryveda.aniket.binaryveda
+package com.binaryveda.aniket.binaryveda.View
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.binaryveda.aniket.binaryveda.R
 
 class MainActivity : AppCompatActivity() {
 
