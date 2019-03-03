@@ -3,8 +3,8 @@ package com.binaryveda.aniket.binaryveda.View
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.DisplayMetrics
-import android.view.View
 import android.widget.RelativeLayout
+import com.binaryveda.aniket.binaryveda.Adapter.SeekerAdapter
 import com.binaryveda.aniket.binaryveda.Contract.BaseContract
 import com.binaryveda.aniket.binaryveda.Model.SeekerData
 import com.binaryveda.aniket.binaryveda.Model.SeekerResponse
@@ -36,6 +36,39 @@ class MainActivity : AppCompatActivity(),BaseContract.View {
     override fun displayResponse(seekerResponse: SeekerResponse) {
 
         loadSeekerData(seekerResponse.data)
+
+        initializeViewPager(seekerResponse.data)
+    }
+
+    private fun initializeViewPager(data: SeekerData?) {
+
+        var stringSkills=""
+        var stringFunction=""
+        var stringIndustry=""
+
+
+
+        data!!.skills!!.forEach {
+            stringSkills += "${it.name} | "
+
+        }
+
+        data!!.work_functions!!.forEach {
+            stringFunction += "${it.name} | "
+
+        }
+
+        data!!.industries!!.forEach {
+            stringIndustry += "${it.name} | "
+
+        }
+
+        var seekerAdapter= SeekerAdapter(supportFragmentManager, stringSkills,stringFunction,stringIndustry,applicationContext)
+
+        viewPager!!.adapter=seekerAdapter
+
+        tabLayout!!.setupWithViewPager(viewPager!!)
+
     }
 
     private fun loadSeekerData(data: SeekerData?) {
@@ -52,10 +85,11 @@ class MainActivity : AppCompatActivity(),BaseContract.View {
         var imageWidth=85*density
 
 
-
+//Create dynamic image
         val small_param = RelativeLayout.LayoutParams(imageWidth.toInt(),imageHeight.toInt())
         small_param.setMargins(20*density.toInt(),30*density.toInt(),0,0)
 
+       //Adding rukes to text besides image
         val small_paramLin = RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,RelativeLayout.LayoutParams.WRAP_CONTENT)
         small_paramLin.setMargins(18*density.toInt(),45*density.toInt(),0,0)
         small_paramLin.addRule(RelativeLayout.RIGHT_OF, ivSeeker.id)
@@ -65,6 +99,7 @@ class MainActivity : AppCompatActivity(),BaseContract.View {
         ivSeeker.layoutParams=small_param
         Glide.with(applicationContext).load(data!!.image).asBitmap().crossFade(800).into(ivSeeker)
 
+        //Creatte height for linear layout
         linDetail.layoutParams.height=80*density.toInt()
         linDetail.requestLayout()
         txtName.text=data.name
@@ -72,7 +107,6 @@ class MainActivity : AppCompatActivity(),BaseContract.View {
         txtLocation.text=data.location
 
 //Add qualification, ctc, experience
-
 
         txtQualification.text=data.highest_qualification!!.name
         txtExperiance.text=data.experience

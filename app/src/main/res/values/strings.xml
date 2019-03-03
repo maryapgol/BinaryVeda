@@ -5,4 +5,13 @@
     <string name="expected_ctc">Expected CTC</string>
     <string name="current_working">Current Working</string>
     <string name="designation">Designation</string>
+    <string name="skill_set">SKILL \n SET</string>
+    <string name="work_function">WORK \n FUNCTION</string>
+    <string name="industry">INDUSTRY</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="confirm">CONFIRM</string>
+    <string name="edit_profile">Edit Profile</string>
+
 </resources>

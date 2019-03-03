@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -279,12 +280,46 @@ android:orientation="vertical"
             android:layout_height="wrap_content"/>
 
     </LinearLayout>
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/SubTitleTextSize"
+        app:tabSelectedTextColor="@color/tabselectedcolor"
+        app:tabTextColor="@color/tabcolor">
 
 
+
+    </android.support.design.widget.TabLayout>
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/seventy_dp"
+        android:id="@+id/viewPager"
+        />
 
     </LinearLayout>
 
+<Button android:layout_width="match_parent"
+    android:layout_height="@dimen/fifty_dp"
+    android:text="@string/confirm"
+    android:textSize="@dimen/ElevenTextSize"
+    android:fontFamily="@font/montserrat_bold"
+    android:textColor="@color/textColor"
+    android:layout_marginLeft="@dimen/forty_five_dp"
+    android:layout_marginRight="@dimen/forty_five_dp"
+    android:background="@drawable/round_button"
+    android:layout_marginTop="@dimen/fifteen_dp"
+    android:layout_gravity="center_horizontal"
+    />
 
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="@string/edit_profile"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/fifteen_dp"
+            android:textSize="@dimen/sixteen"/>
     </LinearLayout>
 
 </RelativeLayout>
