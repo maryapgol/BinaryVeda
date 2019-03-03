@@ -19,6 +19,8 @@ class MainActivityPresenter(var view:BaseContract.View):BaseContract.Presenter {
 
     override fun seekerResponse(seekerResponse: SeekerResponse) {
 
+       view.displayResponse(seekerResponse)
+
     }
 
 

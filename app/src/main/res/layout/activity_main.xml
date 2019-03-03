@@ -4,18 +4,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
     tools:context="com.binaryveda.aniket.binaryveda.View.MainActivity">
 
    <android.support.v7.widget.Toolbar
        android:layout_width="match_parent"
        android:layout_height="?attr/actionBarSize"
+       android:background="@color/colorPrimaryDark"
+
        android:id="@+id/toolbar"
        />
-    <LinearLayout android:id="@+id/linMain"
+    <LinearLayout
+        android:id="@+id/linMain"
         android:orientation="vertical"
         android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivSeeker"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+
+                />
+
+            <LinearLayout
+                android:id="@+id/linSeekerData"
+                android:layout_width="match_parent"
+                android:layout_toRightOf="@+id/ivSeeker"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+            <TextView android:id="@+id/txtName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:fontFamily="@font/montserrat_regular"
+                android:textSize="@dimen/twenty_four"
+                android:textColor="@color/textColor"
+                />
+                <TextView android:id="@+id/txtdesignation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Designation"
+                    android:layout_marginTop="@dimen/title_subtitle_margin"
+                    android:fontFamily="@font/montserrat_light"
+
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/HeaderTextSize"
+
+                    />
+                <LinearLayout android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/screen_margin"
+
+                    android:orientation="horizontal">
+                    <ImageView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/location_small"/>
+                <TextView android:id="@+id/txtLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Location"
+                     android:layout_gravity="center_vertical"
+                    android:fontFamily="@font/montserrat_regular"
+                     android:layout_marginLeft="@dimen/seven_dp"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/sixteen"
+                    />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
 
 
 

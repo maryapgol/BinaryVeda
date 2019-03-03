@@ -30,7 +30,7 @@ class MainActivityModel(var presenter:MainActivityPresenter):BaseContract.Model 
 
                var seekerResponse=response.body()
 
-
+           presenter.seekerResponse(seekerResponse!!)
                 Log.i(TAG,"Response :"+seekerResponse)
             }
 

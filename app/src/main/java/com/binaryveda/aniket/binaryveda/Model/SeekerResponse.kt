@@ -22,7 +22,9 @@ data class SeekerData
         val highest_qualification: HighestQualification?,
         val last_company: LastCompany?,
         val experience: String?,
-        val expected_ctc: String?
+        val expected_ctc: String?,
+        val location:String?
+
 )
 
 data class Designation

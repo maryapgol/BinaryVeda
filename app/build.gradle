@@ -35,5 +35,10 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxjava:2.1.6'
     implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
     implementation 'com.github.simonpercic:oklog3-java:2.3.0'
+//Image cache library
+    implementation 'com.github.bumptech.glide:glide:3.8.0'
+//Circular imageview
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+
 
 }
