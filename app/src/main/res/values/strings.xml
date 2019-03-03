@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Binary Veda</string>
+    <string name="qualification">Qualification</string>
+    <string name="work_experience">Work experience</string>
+    <string name="expected_ctc">Expected CTC</string>
+    <string name="current_working">Current Working</string>
+    <string name="designation">Designation</string>
 </resources>

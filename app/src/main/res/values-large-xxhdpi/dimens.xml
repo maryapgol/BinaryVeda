@@ -68,6 +68,7 @@
     <dimen name="toolbar_elevation">12dp</dimen>
     <dimen name="bottom_tab_height">180dp</dimen>
     <dimen name="bottom_tab_icon">90dp</dimen>
+    <dimen name="eighty">240dp</dimen>
 
     <!--Use only for TextSize-->
     <dimen name="HugeFontSize">75sp</dimen>

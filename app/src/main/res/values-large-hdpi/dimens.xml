@@ -65,6 +65,7 @@
     <dimen name="two_hundred_sixty_dp">390dp</dimen>
     <dimen name="three_hundred_ten_dp">465dp</dimen>
     <dimen name="three_hundred_twenty_dp">480dp</dimen>
+    <dimen name="eighty">120dp</dimen>
 
     <dimen name="toolbar_elevation">6dp</dimen>
     <dimen name="bottom_tab_height">90dp</dimen>
