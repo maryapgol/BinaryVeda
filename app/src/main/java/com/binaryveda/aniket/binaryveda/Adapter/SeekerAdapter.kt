@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentPagerAdapter
 import com.binaryveda.aniket.binaryveda.R
 import com.binaryveda.aniket.binaryveda.View.Fragment.SeekerFragment
 import android.content.Context
+import com.binaryveda.aniket.binaryveda.Helper.Constants
 
 /**
  * Created by Aniket on 03-03-2019.
@@ -22,18 +23,18 @@ var fragment:Fragment?=null
 
 
             SKILL -> {
-                fragment=SeekerFragment.newInstance(skills!!)
+                fragment=SeekerFragment.newInstance(skills!!,Constants.SKILL)
 
             }
 
             WORK_FUNCTION -> {
 
-                fragment=SeekerFragment.newInstance(work_functions!!)
+                fragment=SeekerFragment.newInstance(work_functions!!,Constants.WORK_FUNCTION)
 
             }
 
             INDUSTRIES -> {
-                fragment=SeekerFragment.newInstance(industries!!)
+                fragment=SeekerFragment.newInstance(industries!!,Constants.INDUSTRY)
 
 
             }

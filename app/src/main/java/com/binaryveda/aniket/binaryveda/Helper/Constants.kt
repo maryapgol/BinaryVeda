@@ -6,4 +6,7 @@ package com.binaryveda.aniket.binaryveda.Helper
 object Constants {
 
     val DOMAIN:String="https://apistage.thewift.com/"
+    val SKILL="SKILL"
+    val WORK_FUNCTION="Work_function"
+    val INDUSTRY="Industry"
 }

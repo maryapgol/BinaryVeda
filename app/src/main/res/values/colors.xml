@@ -13,4 +13,6 @@
     <color name="tabselectedcolor">#00ca9d</color>
     <color name="tabcolor">#9b9b9b</color>
     <color name="lightgreen">#5CCB9D</color>
+    <color name="divider_line_color">#a2d8d8d8</color>
+
 </resources>

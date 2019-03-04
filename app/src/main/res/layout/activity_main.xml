@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:id="@+id/scrollviewBackground"
     android:background="@color/colorPrimary"
-    tools:context="com.binaryveda.aniket.binaryveda.View.MainActivity">
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
 
    <android.support.v7.widget.Toolbar
        android:layout_width="match_parent"
@@ -14,7 +19,29 @@
        android:background="@color/colorPrimary"
 
        android:id="@+id/toolbar"
-       />
+       >
+       <RelativeLayout
+           android:id="@+id/relToolbarHeader"
+           android:layout_gravity="center_horizontal"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           >
+
+           <TextView
+               android:id="@+id/txtToolbarHeader"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:ellipsize="end"
+               android:fontFamily="@font/montserrat_medium"
+               android:gravity="center"
+               android:text="@string/profile_summary"
+               android:maxLines="1"
+               android:textColor="@color/textColor"
+               android:textSize="@dimen/sixteen" />
+
+
+       </RelativeLayout>
+   </android.support.v7.widget.Toolbar>
     <LinearLayout
         android:id="@+id/linMain"
         android:orientation="vertical"
@@ -136,6 +163,12 @@ android:orientation="vertical"
 
             android:layout_height="wrap_content"/>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="@dimen/divider_line_height"
+        android:layout_height="@dimen/ten_dp"
+        android:layout_gravity="center_vertical"
+        android:background="@color/divider_line_color"
+        android:orientation="horizontal" />
     <LinearLayout android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/linExperiance"
@@ -175,6 +208,12 @@ android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="@dimen/divider_line_height"
+        android:layout_height="@dimen/ten_dp"
+        android:layout_gravity="center_vertical"
+        android:background="@color/divider_line_color"
+        android:orientation="horizontal" />
     <LinearLayout android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/linExpectedctc"
@@ -248,7 +287,12 @@ android:orientation="vertical"
             android:layout_height="wrap_content"/>
 
     </LinearLayout>
-
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divider_line_height"
+        android:id="@+id/divider_line"
+        android:background="@color/divider_line_color"
+        android:orientation="horizontal" />
     <LinearLayout android:layout_width="match_parent"
         android:orientation="vertical"
         android:background="@color/bg_color"
@@ -308,7 +352,7 @@ android:orientation="vertical"
     android:layout_marginLeft="@dimen/forty_five_dp"
     android:layout_marginRight="@dimen/forty_five_dp"
     android:background="@drawable/round_button"
-    android:layout_marginTop="@dimen/fifteen_dp"
+    android:layout_marginTop="@dimen/twenty_dp"
     android:layout_gravity="center_horizontal"
     />
 
@@ -323,3 +367,4 @@ android:orientation="vertical"
     </LinearLayout>
 
 </RelativeLayout>
+</ScrollView>

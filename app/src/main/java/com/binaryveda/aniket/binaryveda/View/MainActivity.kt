@@ -1,8 +1,10 @@
 package com.binaryveda.aniket.binaryveda.View
 
+import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.DisplayMetrics
+import android.view.Menu
 import android.widget.RelativeLayout
 import com.binaryveda.aniket.binaryveda.Adapter.SeekerAdapter
 import com.binaryveda.aniket.binaryveda.Contract.BaseContract
@@ -12,6 +14,11 @@ import com.binaryveda.aniket.binaryveda.Presenter.MainActivityPresenter
 import com.binaryveda.aniket.binaryveda.R
 import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.activity_main.*
+import android.graphics.drawable.GradientDrawable
+import android.graphics.Color.parseColor
+import android.support.design.widget.TabLayout
+import android.widget.Toast
+
 
 class MainActivity : AppCompatActivity(),BaseContract.View {
 
@@ -20,7 +27,7 @@ class MainActivity : AppCompatActivity(),BaseContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
-
+         toolbar.setNavigationIcon(R.drawable.menu)
         initializeData()
 
     }
@@ -30,6 +37,22 @@ class MainActivity : AppCompatActivity(),BaseContract.View {
 
       mainActivityPresenter!!.getSeekerData()
 
+        createBackground()
+
+    }
+
+    private fun createBackground() {
+        //Color.parseColor() method allow us to convert
+        // a hexadecimal color string to an integer value (int color)
+        val colors = intArrayOf(Color.parseColor("#1A5D92"), Color.parseColor("#5CCB9D"))
+
+        //create a new gradient color
+        val gd = GradientDrawable(
+                GradientDrawable.Orientation.TOP_BOTTOM, colors)
+
+        gd.cornerRadius = 0f
+        //apply the button background to newly created drawable gradient
+        scrollviewBackground.setBackground(gd)
     }
 
 
@@ -69,6 +92,37 @@ class MainActivity : AppCompatActivity(),BaseContract.View {
 
         tabLayout!!.setupWithViewPager(viewPager!!)
 
+        tabLayout.addOnTabSelectedListener(object:TabLayout.OnTabSelectedListener{
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+
+
+            }
+
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+
+
+            }
+
+            override fun onTabSelected(tab: TabLayout.Tab?) {
+
+                when(tab!!.position)
+                {
+                    1->
+                        showToast(resources.getString(R.string.seeker_work_function))
+
+                    2->
+                        showToast(resources.getString(R.string.seeker_industry))
+
+                }
+            }
+
+
+        })
+    }
+
+    private fun showToast(string: String?) {
+
+        Toast.makeText(applicationContext,string,Toast.LENGTH_SHORT).show()
     }
 
     private fun loadSeekerData(data: SeekerData?) {
@@ -99,7 +153,7 @@ class MainActivity : AppCompatActivity(),BaseContract.View {
         ivSeeker.layoutParams=small_param
         Glide.with(applicationContext).load(data!!.image).asBitmap().crossFade(800).into(ivSeeker)
 
-        //Creatte height for linear layout
+        //Create height for linear layout
         linDetail.layoutParams.height=80*density.toInt()
         linDetail.requestLayout()
         txtName.text=data.name
@@ -116,5 +170,8 @@ class MainActivity : AppCompatActivity(),BaseContract.View {
         txtDesignation.text=data.designation.name
     }
 
-
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.activity_main_menu,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
 }

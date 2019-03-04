@@ -8,6 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
+import com.binaryveda.aniket.binaryveda.Helper.Constants
 
 import com.binaryveda.aniket.binaryveda.R
 
@@ -22,10 +24,14 @@ import com.binaryveda.aniket.binaryveda.R
 class SeekerFragment : Fragment() {
 
     private var data:String?=null
+    private var type:String?=null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         if (arguments != null) {
             data = arguments.getString(DATA)
+            type = arguments.getString(TYPE)
+
         }
     }
 
@@ -38,16 +44,21 @@ class SeekerFragment : Fragment() {
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
          view!!.findViewById<TextView>(R.id.txtData).text=data
+
+
     }
 
     companion object {
 
         private val DATA = "data"
+        private val TYPE = "type"
 
-        fun newInstance(data: String): SeekerFragment {
+        fun newInstance(data: String,type:String): SeekerFragment {
             val fragment = SeekerFragment()
             val args = Bundle()
             args.putString(DATA,data)
+            args.putString(TYPE,type)
+
             fragment.arguments = args
             return fragment
         }
