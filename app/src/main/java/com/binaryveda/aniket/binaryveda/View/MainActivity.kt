@@ -1,5 +1,6 @@
 package com.binaryveda.aniket.binaryveda.View
 
+import android.app.ProgressDialog
 import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -17,12 +18,28 @@ import kotlinx.android.synthetic.main.activity_main.*
 import android.graphics.drawable.GradientDrawable
 import android.graphics.Color.parseColor
 import android.support.design.widget.TabLayout
+import android.view.View.VISIBLE
 import android.widget.Toast
 
 
 class MainActivity : AppCompatActivity(),BaseContract.View {
+    override fun displayProgressDialog() {
 
-     private var mainActivityPresenter:MainActivityPresenter?=null
+        progressDialog= ProgressDialog(this)
+        progressDialog!!.setMessage(getString(R.string.loading_data))
+        progressDialog!!.show()
+    }
+
+    override fun hideProgressDialog() {
+        if(progressDialog!=null)
+        {
+            progressDialog!!.dismiss()
+        }
+    }
+
+    private var mainActivityPresenter:MainActivityPresenter?=null
+    private var progressDialog:ProgressDialog?=null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -57,7 +74,7 @@ class MainActivity : AppCompatActivity(),BaseContract.View {
 
 
     override fun displayResponse(seekerResponse: SeekerResponse) {
-
+        linMain.visibility=VISIBLE
         loadSeekerData(seekerResponse.data)
 
         initializeViewPager(seekerResponse.data)

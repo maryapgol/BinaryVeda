@@ -18,5 +18,6 @@
     <string name="location">location</string>
     <string name="seeker_work_function">Seekers work funtion</string>
     <string name="seeker_industry">Seekers industry</string>
+    <string name="loading_data">Loading data</string>
 
 </resources>

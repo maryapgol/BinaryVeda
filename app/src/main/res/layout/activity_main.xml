@@ -42,9 +42,12 @@
 
        </RelativeLayout>
    </android.support.v7.widget.Toolbar>
+
+    <!--Main view start -->
     <LinearLayout
         android:id="@+id/linMain"
         android:orientation="vertical"
+        android:visibility="gone"
         android:layout_below="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

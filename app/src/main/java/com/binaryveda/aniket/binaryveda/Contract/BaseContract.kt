@@ -11,6 +11,9 @@ class BaseContract {
 
         fun displayResponse(seekerResponse: SeekerResponse)
 
+        fun displayProgressDialog()
+        fun hideProgressDialog()
+
     }
 
     interface Presenter {
